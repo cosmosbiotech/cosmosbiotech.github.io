@@ -38,8 +38,8 @@
         }
 
         .glass-nav {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
@@ -70,17 +70,6 @@
             transform: translateY(0);
         }
 
-        /* Advisor Avatar Size */
-        .avatar-advisor {
-            width: 96px;
-            height: 96px;
-            border-radius: 50%;
-            background: #e2e8f0;
-            overflow: hidden;
-            border: 3px solid #14b8a6;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
         .spec-grid {
             border-top: 1px solid #f1f5f9;
             padding-top: 1.5rem;
@@ -92,6 +81,14 @@
             background-size: cover;
             background-position: center;
         }
+
+        /* Utility for better responsive text */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3rem !important;
+                line-height: 1.2;
+            }
+        }
     </style>
 </head>
 
@@ -99,85 +96,89 @@
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 glass-nav">
-        <div class="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center">
-            <div class="flex items-center">
-                <!-- Logo with vertical alignment in the h-24 bar -->
+        <div class="max-w-7xl mx-auto px-4 md:px-8 h-24 flex justify-between items-center">
+            <div class="flex items-center shrink-0">
                 <a href="#"><img src="images/logo.png" alt="Cosmos Bio" class="h-16 w-auto"></a>
             </div>
             <div
-                class="hidden md:flex items-center space-x-8 text-xs font-bold uppercase tracking-widest text-slate-600 h-full">
+                class="hidden lg:flex items-center space-x-6 xl:space-x-10 text-xs font-bold uppercase tracking-widest text-slate-600 h-full">
                 <a href="#about" class="hover:text-teal-500 transition">About</a>
                 <a href="#products" class="hover:text-teal-500 transition">Molecules</a>
                 <a href="#team" class="hover:text-teal-500 transition">Team</a>
                 <a href="#awards" class="hover:text-teal-500 transition">Recognition</a>
                 <a href="#contact"
-                    class="px-6 py-3 bg-[#002244] text-white rounded-full hover:bg-teal-600 transition text-[10px]">Contact
+                    class="px-6 py-3 bg-[#002244] text-white rounded-full hover:bg-teal-600 transition shadow-lg">Contact
                     Us</a>
+            </div>
+            <!-- Mobile Menu Icon -->
+            <div class="lg:hidden text-[#002244]">
+                <i data-lucide="menu" class="w-8 h-8"></i>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section with pt-24 to avoid menu overlap -->
-    <section class="relative h-[85vh] flex items-center justify-center overflow-hidden pt-24">
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
         <canvas id="hero-canvas"></canvas>
-        <div class="relative z-10 text-center text-white px-6">
+        <div class="relative z-10 text-center text-white px-6 py-12 max-w-5xl">
             <div
-                class="inline-flex items-center space-x-2 bg-teal-500/20 border border-teal-500/30 rounded-full px-4 py-1 mb-6">
+                class="inline-flex items-center space-x-2 bg-teal-500/20 border border-teal-500/30 rounded-full px-4 py-2 mb-8">
                 <span class="w-2 h-2 bg-teal-400 rounded-full animate-pulse"></span>
-                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-teal-300">Precision Synthetic
-                    Biology</span>
+                <span class="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-teal-300">Precision
+                    Synthetic Biology</span>
             </div>
-            <h1 class="text-5xl md:text-8xl font-bold font-outfit mb-6 leading-tight">The Science of Tomorrow’s
-                <br><span class="text-teal-400 italic">Skin Care</span>
-            </h1>
-            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto font-light mb-10 leading-relaxed">
+            <h1 class="hero-title text-5xl md:text-7xl lg:text-8xl font-bold font-outfit mb-8 leading-tight">
+                Bio-Identical <br><span class="text-teal-400 italic">Solutions</span></h1>
+            <p class="text-lg md:text-xl lg:text-2xl text-slate-200 max-w-3xl mx-auto font-light mb-12 leading-relaxed">
                 Harnessing engineered microbial pathways to deliver high-performance,
-                sustainable active ingredients for personal care.
+                sustainable active ingredients for the personal care industry.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
                 <a href="#products"
-                    class="px-8 py-4 bg-teal-500 text-[#001122] rounded-xl font-bold hover:bg-white transition">Portfolio</a>
+                    class="w-full sm:w-auto px-10 py-5 bg-teal-500 text-[#001122] rounded-xl font-bold hover:bg-white transition shadow-2xl">Portfolio</a>
                 <a href="#team"
-                    class="px-8 py-4 border border-white/20 text-white rounded-xl font-bold hover:bg-white/10 transition text-sm">Our
+                    class="w-full sm:w-auto px-10 py-5 border border-white/30 text-white rounded-xl font-bold hover:bg-white/10 transition text-sm">Our
                     Team</a>
             </div>
         </div>
     </section>
 
     <!-- Molecule Portfolio Section -->
-    <section id="products" class="py-24 bg-slate-50">
+    <section id="products" class="py-24 md:py-32 bg-slate-50">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
+            <div class="text-center mb-20">
                 <h2 class="text-teal-500 font-bold uppercase tracking-widest text-sm mb-4">Portfolio</h2>
-                <h3 class="text-4xl font-bold text-[#002244] font-outfit">Active Ingredient Innovation</h3>
+                <h3 class="text-4xl md:text-5xl font-bold text-[#002244] font-outfit tracking-tight">Active Ingredient
+                    Innovation</h3>
             </div>
 
-            <div class="grid lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
                 <!-- Ectoine Card -->
-                <div class="bg-white p-8 rounded-3xl card-shadow border border-slate-100 flex flex-col reveal">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="w-14 h-14 bg-teal-50 rounded-2xl flex items-center justify-center text-teal-600">
-                            <i data-lucide="shield-check" class="w-7 h-7"></i>
+                <div
+                    class="bg-white p-8 md:p-10 rounded-[32px] card-shadow border border-slate-100 flex flex-col reveal">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center text-teal-600">
+                            <i data-lucide="shield-check" class="w-8 h-8"></i>
                         </div>
                         <span
-                            class="text-[9px] font-bold bg-teal-500 text-white px-3 py-1.5 rounded-full uppercase tracking-widest shadow-sm">Commercial</span>
+                            class="text-[10px] font-bold bg-teal-500 text-white px-4 py-2 rounded-full uppercase tracking-widest shadow-sm">Commercial</span>
                     </div>
                     <div class="flex-grow">
-                        <h4 class="text-2xl font-bold text-[#002244] mb-1">Ectoine API</h4>
-                        <p class="text-teal-600 text-[10px] font-bold uppercase tracking-[0.2em] mb-4">Cellular
+                        <h4 class="text-2xl font-bold text-[#002244] mb-2">Ectoine API</h4>
+                        <p class="text-teal-600 text-xs font-bold uppercase tracking-[0.2em] mb-6">Cellular
                             Protection Factor</p>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        <p class="text-slate-600 text-sm leading-relaxed mb-8">
                             Natural protector from halophilic bacteria. Exceptional stability in formulations for
                             anti-aging, blue light protection, and dermatitis care.
                         </p>
                     </div>
                     <div class="spec-grid grid grid-cols-2 gap-4">
                         <div>
-                            <p class="text-[9px] uppercase font-bold text-slate-400">Purity</p>
+                            <p class="text-[10px] uppercase font-bold text-slate-400 mb-1">Purity</p>
                             <p class="text-sm font-bold text-[#002244] tracking-tight">> 98% (HPLC)</p>
                         </div>
                         <div>
-                            <p class="text-[9px] uppercase font-bold text-slate-400">Status</p>
+                            <p class="text-[10px] uppercase font-bold text-slate-400 mb-1">Status</p>
                             <p class="text-sm font-bold text-[#002244] tracking-tight">Market Ready</p>
                         </div>
                     </div>
@@ -185,64 +186,64 @@
 
                 <!-- Hyaluronic Acid Card -->
                 <div
-                    class="bg-white p-8 rounded-3xl card-shadow border border-slate-100 flex flex-col reveal delay-100">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600">
-                            <i data-lucide="droplet" class="w-7 h-7"></i>
+                    class="bg-white p-8 md:p-10 rounded-[32px] card-shadow border border-slate-100 flex flex-col reveal delay-100">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600">
+                            <i data-lucide="droplet" class="w-8 h-8"></i>
                         </div>
                         <span
-                            class="text-[9px] font-bold bg-teal-500 text-white px-3 py-1.5 rounded-full uppercase tracking-widest shadow-sm">Commercial</span>
+                            class="text-[10px] font-bold bg-teal-500 text-white px-4 py-2 rounded-full uppercase tracking-widest shadow-sm">Commercial</span>
                     </div>
                     <div class="flex-grow">
-                        <h4 class="text-2xl font-bold text-[#002244] mb-1">Vegan HA</h4>
-                        <p class="text-blue-600 text-[10px] font-bold uppercase tracking-[0.2em] mb-4">Bio-Fermented
+                        <h4 class="text-2xl font-bold text-[#002244] mb-2">Vegan HA</h4>
+                        <p class="text-blue-600 text-xs font-bold uppercase tracking-[0.2em] mb-6">Bio-Fermented
                         </p>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        <p class="text-slate-600 text-sm leading-relaxed mb-8">
                             Precision fermented Hyaluronic Acid. 100% animal-free, clinical-grade hydration for premium
                             cosmetics and derma applications.
                         </p>
                     </div>
                     <div class="spec-grid grid grid-cols-2 gap-4">
                         <div>
-                            <p class="text-[9px] uppercase font-bold text-slate-400">Origin</p>
-                            <p class="text-sm font-bold text-[#002244] tracking-tight">Non-Animal</p>
+                            <p class="text-[10px] uppercase font-bold text-slate-400 mb-1">Origin</p>
+                            <p class="text-sm font-bold text-[#002244] tracking-tight">Microbial</p>
                         </div>
                         <div>
-                            <p class="text-[9px] uppercase font-bold text-slate-400">Type</p>
+                            <p class="text-[10px] uppercase font-bold text-slate-400 mb-1">Type</p>
                             <p class="text-sm font-bold text-[#002244] tracking-tight">High Molecular</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Gadusol Card -->
+                <!-- UNIFIED Gadusol Card (Under Development) -->
                 <div
-                    class="bg-[#002244] p-8 rounded-3xl card-shadow border border-white/5 flex flex-col text-white reveal delay-200">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-teal-400">
-                            <i data-lucide="sun" class="w-7 h-7"></i>
+                    class="bg-white p-8 md:p-10 rounded-[32px] card-shadow border border-slate-100 border-t-4 border-t-amber-400 flex flex-col reveal delay-200">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="w-16 h-16 bg-amber-50 rounded-2xl flex items-center justify-center text-amber-600">
+                            <i data-lucide="sun" class="w-8 h-8"></i>
                         </div>
                         <span
-                            class="text-[9px] font-bold bg-amber-500 text-white px-3 py-1.5 rounded-full uppercase tracking-widest shadow-sm">Advanced
-                            R&D</span>
+                            class="text-[10px] font-bold bg-amber-500 text-white px-4 py-2 rounded-full uppercase tracking-widest shadow-sm">Pipeline
+                            Focus</span>
                     </div>
                     <div class="flex-grow">
-                        <h4 class="text-2xl font-bold mb-1">Gadusol</h4>
-                        <p class="text-teal-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-4">Sustainable UV
+                        <h4 class="text-2xl font-bold text-[#002244] mb-2">Gadusol</h4>
+                        <p class="text-amber-600 text-xs font-bold uppercase tracking-[0.2em] mb-6">Sustainable UV
                             Filter</p>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        <p class="text-slate-600 text-sm leading-relaxed mb-8">
                             Evolutionary DNA protection derived from nature. Currently scaling the microbial expression
                             system to
-                            commercial bioreactor volumes.
+                            commercial bioreactor volumes for broad eco-friendly topical use.
                         </p>
                     </div>
-                    <div class="spec-grid grid grid-cols-2 gap-4 border-white/10">
+                    <div class="spec-grid grid grid-cols-2 gap-4">
                         <div>
-                            <p class="text-[9px] uppercase font-bold text-white/40">Target</p>
-                            <p class="text-sm font-bold text-teal-400 tracking-tight">Green Topicals</p>
+                            <p class="text-[10px] uppercase font-bold text-slate-400 mb-1">Target</p>
+                            <p class="text-sm font-bold text-[#002244] tracking-tight">Green Pharma</p>
                         </div>
                         <div>
-                            <p class="text-[9px] uppercase font-bold text-white/40">Scale-up</p>
-                            <p class="text-sm font-bold text-teal-400 tracking-tight">Phase 3</p>
+                            <p class="text-[10px] uppercase font-bold text-slate-400 mb-1">Scale-up</p>
+                            <p class="text-sm font-bold text-[#002244] tracking-tight">Phase 3 R&D</p>
                         </div>
                     </div>
                 </div>
@@ -251,41 +252,42 @@
     </section>
 
     <!-- Beauty & You Spotlight Section -->
-    <section class="py-24 beauty-gradient relative text-white">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+    <section class="py-24 md:py-32 beauty-gradient relative text-white">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
             <div class="reveal">
                 <div
-                    class="inline-block px-4 py-1 bg-white/10 border border-white/20 rounded-full text-teal-400 text-[10px] font-bold tracking-[0.2em] uppercase mb-6">
+                    class="inline-block px-4 py-1 bg-white/10 border border-white/20 rounded-full text-teal-400 text-[10px] font-bold tracking-[0.2em] uppercase mb-8">
                     A Story of Breakthrough
                 </div>
-                <h3 class="text-4xl md:text-5xl font-serif mb-6 leading-tight">Pioneering the Future of <span
-                        class="italic text-teal-400">Indian Beauty</span></h3>
-                <p class="text-slate-300 text-lg leading-relaxed mb-8">
+                <h3 class="text-4xl md:text-5xl lg:text-6xl font-serif mb-8 leading-tight">Pioneering the Future of
+                    <span class="italic text-teal-400">Indian Beauty</span>
+                </h3>
+                <p class="text-slate-200 text-lg md:text-xl leading-relaxed mb-8">
                     Cosmos Bio was honored to be selected as a finalist in the <b>Breakthrough</b> category for the 2024
                     <b>BEAUTY&YOU Awards</b>, a landmark initiative by <b>Estée Lauder Companies</b> and <b>Nykaa</b>.
                 </p>
-                <p class="text-slate-300 text-sm leading-relaxed mb-10">
+                <p class="text-slate-300 text-sm md:text-base leading-relaxed mb-12">
                     Recognized for our revolutionary work in synthetic biology, this achievement highlights our journey
                     in bringing high-performance, nature-identical ingredients to the global stage.
                 </p>
                 <a href="https://beautyandyouawards.com/2025-finalist-voting/dr-bharat-reddy-and-sowjanya-venkata"
                     target="_blank"
-                    class="inline-flex items-center px-8 py-4 bg-teal-500 text-[#001122] rounded-xl font-bold hover:bg-white transition">
+                    class="inline-flex items-center px-10 py-5 bg-teal-500 text-[#001122] rounded-xl font-bold hover:bg-white transition text-sm">
                     View Official Finalist Profile
                     <i data-lucide="external-link" class="ml-2 w-4 h-4"></i>
                 </a>
             </div>
-            <div class="hidden md:flex justify-center reveal delay-200">
+            <div class="hidden lg:flex justify-center reveal delay-200">
                 <div
-                    class="p-12 bg-white/5 backdrop-blur-xl border border-white/10 rounded-[40px] text-center max-w-sm">
-                    <div class="mb-6">
+                    class="p-12 md:p-16 bg-white/5 backdrop-blur-xl border border-white/10 rounded-[48px] text-center max-w-sm">
+                    <div class="mb-10">
                         <img src="https://beautyandyouawards.com/static/media/BNY-white-logo.f506521dae31c4299cf34f39fb1f0fe7.svg"
-                            alt="Beauty & You" class="h-24 w-auto mx-auto">
+                            alt="Beauty & You" class="h-24 md:h-32 w-auto mx-auto">
                     </div>
-                    <div class="h-px w-24 bg-teal-500/30 mx-auto mb-8"></div>
-                    <p class="text-xs uppercase tracking-[0.3em] font-bold text-teal-400 mb-2">Finalist: Breakthrough
-                        Category</p>
-                    <p class="text-xl font-serif italic text-slate-100 mb-6">"Driving the next generation of scientific
+                    <div class="h-px w-24 bg-teal-500/30 mx-auto mb-10"></div>
+                    <p class="text-xs md:text-sm uppercase tracking-[0.3em] font-bold text-teal-400 mb-4">Finalist:
+                        Breakthrough Category</p>
+                    <p class="text-xl font-serif italic text-slate-100">"Driving the next generation of scientific
                         beauty."</p>
                 </div>
             </div>
@@ -293,119 +295,138 @@
     </section>
 
     <!-- Team Section -->
-    <section id="team" class="py-24 bg-white">
+    <section id="team" class="py-24 md:py-32 bg-white">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <h2 class="text-teal-500 font-bold uppercase tracking-widest text-sm mb-4">Leadership</h2>
-            <h3 class="text-4xl font-bold text-[#002244] font-outfit mb-20">Core Management</h3>
+            <h3 class="text-4xl md:text-5xl font-bold text-[#002244] font-outfit mb-24 tracking-tight">The Team Behind
+                the Science</h3>
 
-            <div class="grid md:grid-cols-2 gap-12 mb-24 max-w-3xl mx-auto">
+            <!-- Founders -->
+            <div class="grid md:grid-cols-2 gap-16 mb-32 max-w-4xl mx-auto">
                 <div class="reveal">
-                    <div class="w-48 h-56 mx-auto mb-6 team-blob shadow-lg">
+                    <div class="w-56 h-64 mx-auto mb-8 team-blob shadow-2xl">
                         <img src="images/bharat.jpeg" alt="Bharat Somireddy" class="w-full h-full object-cover">
                     </div>
-                    <div class="flex items-center justify-center space-x-2 mb-1">
-                        <h4 class="text-xl font-bold text-[#002244]">Bharat Somireddy, Ph.D.</h4>
+                    <div class="flex items-center justify-center space-x-2 mb-2">
+                        <h4 class="text-2xl font-bold text-[#002244]">Bharat Somireddy, Ph.D.</h4>
                         <a href="https://www.linkedin.com/in/bharat-somireddy-venkata" target="_blank"
                             class="text-[#0077b5] hover:opacity-80 transition"><i data-lucide="linkedin"
-                                class="w-4 h-4"></i></a>
+                                class="w-5 h-5"></i></a>
                     </div>
-                    <p class="text-teal-600 text-xs font-bold uppercase tracking-widest mb-2">CEO & Founder</p>
+                    <p class="text-teal-600 text-xs font-bold uppercase tracking-[0.2em]">CEO & Founder</p>
                 </div>
                 <div class="reveal delay-100">
-                    <div class="w-48 h-56 mx-auto mb-6 team-blob shadow-lg">
+                    <div class="w-56 h-64 mx-auto mb-8 team-blob shadow-2xl">
                         <img src="images/soujanya.png" alt="Sowjanya Venkata" class="w-full h-full object-cover">
                     </div>
-                    <div class="flex items-center justify-center space-x-2 mb-1">
-                        <h4 class="text-xl font-bold text-[#002244]">Sowjanya Venkata</h4>
+                    <div class="flex items-center justify-center space-x-2 mb-2">
+                        <h4 class="text-2xl font-bold text-[#002244]">Sowjanya Venkata</h4>
                         <a href="https://www.linkedin.com/in/sowjanya-somireddy-656388155" target="_blank"
                             class="text-[#0077b5] hover:opacity-80 transition"><i data-lucide="linkedin"
-                                class="w-4 h-4"></i></a>
+                                class="w-5 h-5"></i></a>
                     </div>
-                    <p class="text-teal-600 text-xs font-bold uppercase tracking-widest mb-2">Director & Cofounder</p>
+                    <p class="text-teal-600 text-xs font-bold uppercase tracking-[0.2em]">Director & Cofounder</p>
                 </div>
             </div>
 
+            <!-- R&D Section -->
             <h2 class="text-slate-400 font-bold uppercase tracking-widest text-[10px] mb-12">Research & Development Team
             </h2>
-            <div class="grid grid-cols-2 lg:grid-cols-5 gap-8 mb-24">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12 mb-32">
                 <div class="reveal">
                     <div
-                        class="w-32 h-32 mx-auto mb-4 rounded-2xl overflow-hidden bg-slate-50 border border-slate-100 shadow-sm">
+                        class="w-full aspect-[4/5] mb-6 rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-sm">
                         <img src="images/nilesh.png" alt="Nilesh Aghera" class="w-full h-full object-cover">
                     </div>
-                    <div class="flex items-center justify-center space-x-1.5 mb-0.5">
-                        <p class="text-sm font-bold text-[#002244]">Nilesh Aghera, Ph.D.</p>
+                    <div class="flex items-center justify-center space-x-1.5 mb-1">
+                        <p class="text-sm md:text-base font-bold text-[#002244]">Nilesh Aghera, Ph.D.</p>
                         <a href="https://www.linkedin.com/in/nilesh-aghera-phd-a060a214" target="_blank"
                             class="text-[#0077b5] hover:opacity-80 transition"><i data-lucide="linkedin"
-                                class="w-3.5 h-3.5"></i></a>
+                                class="w-4 h-4"></i></a>
                     </div>
                     <p class="text-[10px] text-teal-600 font-bold uppercase tracking-widest">Team Lead</p>
                 </div>
                 <div class="reveal delay-75">
                     <div
-                        class="w-32 h-32 mx-auto mb-4 rounded-2xl overflow-hidden bg-slate-50 border border-slate-100 shadow-sm">
+                        class="w-full aspect-[4/5] mb-6 rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-sm">
                         <img src="images/akanksha.png" alt="Akanksha Aphale" class="w-full h-full object-cover">
                     </div>
-                    <div class="flex items-center justify-center space-x-1.5 mb-0.5">
-                        <p class="text-sm font-bold text-[#002244]">Akanksha Aphale</p>
+                    <div class="flex items-center justify-center space-x-1.5 mb-1">
+                        <p class="text-sm md:text-base font-bold text-[#002244]">Akanksha Aphale</p>
                         <a href="https://www.linkedin.com/in/akanksha-aphale-8452601b0" target="_blank"
                             class="text-[#0077b5] hover:opacity-80 transition"><i data-lucide="linkedin"
-                                class="w-3.5 h-3.5"></i></a>
+                                class="w-4 h-4"></i></a>
                     </div>
                     <p class="text-[10px] text-teal-600 font-bold uppercase tracking-widest">Junior Scientist</p>
                 </div>
                 <div class="reveal delay-150">
                     <div
-                        class="w-32 h-32 mx-auto mb-4 rounded-2xl overflow-hidden bg-slate-50 border border-slate-100 shadow-sm">
+                        class="w-full aspect-[4/5] mb-6 rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-sm">
                         <img src="images/bhavana.png" alt="Bhawna Gupta" class="w-full h-full object-cover">
                     </div>
-                    <p class="text-sm font-bold text-[#002244]">Bhawna Gupta</p>
+                    <div class="flex items-center justify-center space-x-1.5 mb-1">
+                        <p class="text-sm md:text-base font-bold text-[#002244]">Bhawna Gupta</p>
+                        <a href="https://www.linkedin.com/in/bhawnagupta26/" target="_blank"
+                            class="text-[#0077b5] hover:opacity-80 transition"><i data-lucide="linkedin"
+                                class="w-4 h-4"></i></a>
+                    </div>
                     <p class="text-[10px] text-teal-600 font-bold uppercase tracking-widest">Molecular Biologist</p>
                 </div>
                 <div class="reveal delay-225">
                     <div
-                        class="w-32 h-32 mx-auto mb-4 rounded-2xl overflow-hidden bg-slate-50 border border-slate-100 shadow-sm">
+                        class="w-full aspect-[4/5] mb-6 rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-sm">
                         <img src="images/tanisha.jpg" alt="Tanisha Jain" class="w-full h-full object-cover">
                     </div>
-                    <div class="flex items-center justify-center space-x-1.5 mb-0.5">
-                        <p class="text-sm font-bold text-[#002244]">Tanisha Jain</p>
+                    <div class="flex items-center justify-center space-x-1.5 mb-1">
+                        <p class="text-sm md:text-base font-bold text-[#002244]">Tanisha Jain</p>
                         <a href="https://www.linkedin.com/in/tanisha-jain24" target="_blank"
                             class="text-[#0077b5] hover:opacity-80 transition"><i data-lucide="linkedin"
-                                class="w-3.5 h-3.5"></i></a>
+                                class="w-4 h-4"></i></a>
                     </div>
                     <p class="text-[10px] text-teal-600 font-bold uppercase tracking-widest">Research Associate</p>
                 </div>
                 <div class="reveal delay-300">
                     <div
-                        class="w-32 h-32 mx-auto mb-4 rounded-2xl overflow-hidden bg-slate-50 border border-slate-100 shadow-sm">
+                        class="w-full aspect-[4/5] mb-6 rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-sm">
                         <img src="images/ajay.png" alt="Ajay Kumar" class="w-full h-full object-cover">
                     </div>
-                    <p class="text-sm font-bold text-[#002244]">Ajay Kumar K. S</p>
+                    <div class="flex items-center justify-center space-x-1.5 mb-1">
+                        <p class="text-sm md:text-base font-bold text-[#002244]">Ajay Kumar K. S</p>
+                        <a href="https://www.linkedin.com/in/p11ajayks/" target="_blank"
+                            class="text-[#0077b5] hover:opacity-80 transition"><i data-lucide="linkedin"
+                                class="w-4 h-4"></i></a>
+                    </div>
                     <p class="text-[10px] text-teal-600 font-bold uppercase tracking-widest">Business Dev. Advisor</p>
                 </div>
             </div>
 
             <!-- Advisors Section -->
-            <div class="mt-24 pt-16 border-t border-slate-100">
+            <div class="mt-24 pt-24 border-t border-slate-100">
                 <h2 class="text-slate-400 font-bold uppercase tracking-widest text-[10px] mb-16">Scientific Advisors &
                     Mentors</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20 max-w-5xl mx-auto">
                     <div class="text-center flex flex-col items-center reveal">
-                        <div class="avatar-advisor mb-4"><img src="images/guhan.png" alt="Guhan Jayaraman"
-                                class="w-full h-full object-cover"></div>
-                        <p class="text-sm font-bold text-[#002244]">Prof. Guhan Jayaraman</p>
+                        <div
+                            class="w-32 h-40 md:w-40 md:h-48 mb-6 rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-lg">
+                            <img src="images/guhan.png" alt="Guhan Jayaraman" class="w-full h-full object-cover">
+                        </div>
+                        <p class="text-lg font-bold text-[#002244]">Prof. Guhan Jayaraman</p>
                         <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Project Advisor</p>
                     </div>
                     <div class="text-center flex flex-col items-center reveal delay-100">
-                        <div class="avatar-advisor mb-4"><img src="images/gopal.jpeg" alt="Dr. Gopi"
-                                class="w-full h-full object-cover"></div>
-                        <p class="text-sm font-bold text-[#002244]">Dr. Gopal R. Gopi</p>
+                        <div
+                            class="w-32 h-40 md:w-40 md:h-48 mb-6 rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-lg">
+                            <img src="images/gopal.jpeg" alt="Dr. Gopi" class="w-full h-full object-cover">
+                        </div>
+                        <p class="text-lg font-bold text-[#002244]">Dr. Gopal R. Gopi</p>
                         <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Collaborator</p>
                     </div>
                     <div class="text-center flex flex-col items-center reveal delay-200">
-                        <div class="avatar-advisor mb-4"><img src="images/venkatesh.png" alt="Prof. Venkatesh"
-                                class="w-full h-full object-cover"></div>
-                        <p class="text-sm font-bold text-[#002244]">Prof. Venkatesh KV</p>
+                        <div
+                            class="w-32 h-40 md:w-40 md:h-48 mb-6 rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-lg">
+                            <img src="images/venkatesh.png" alt="Prof. Venkatesh" class="w-full h-full object-cover">
+                        </div>
+                        <p class="text-lg font-bold text-[#002244]">Prof. Venkatesh KV</p>
                         <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Collaborator</p>
                     </div>
                 </div>
@@ -416,59 +437,63 @@
     <!-- Awards Section -->
     <section id="awards" class="py-24 bg-[#002244] text-white">
         <div class="max-w-7xl mx-auto px-6">
-            <h3 class="text-center text-2xl font-bold font-outfit mb-16">Global Awards & Accolades</h3>
+            <h3 class="text-center text-2xl md:text-3xl font-bold font-outfit mb-20 tracking-tight">Global Awards &
+                Accolades</h3>
             <div class="grid grid-cols-2 lg:grid-cols-5 gap-12 text-center opacity-90">
-                <div>
-                    <i data-lucide="sparkles" class="w-8 h-8 text-teal-400 mx-auto mb-4"></i>
+                <div class="flex flex-col items-center">
+                    <i data-lucide="sparkles" class="w-10 h-10 text-teal-400 mb-4"></i>
                     <p class="text-sm font-bold">Beauty&You</p>
-                    <p class="text-[8px] uppercase tracking-widest text-slate-400">Finalist: Breakthrough</p>
+                    <p class="text-[9px] uppercase tracking-widest text-slate-400">Finalist: Breakthrough</p>
                 </div>
-                <div>
-                    <i data-lucide="medal" class="w-8 h-8 text-teal-400 mx-auto mb-4"></i>
+                <div class="flex flex-col items-center">
+                    <i data-lucide="medal" class="w-10 h-10 text-teal-400 mb-4"></i>
                     <p class="text-sm font-bold">NBEC Awardee</p>
-                    <p class="text-[8px] uppercase tracking-widest text-slate-400">Bio Entrepreneurship</p>
+                    <p class="text-[9px] uppercase tracking-widest text-slate-400">Bio Entrepreneurship</p>
                 </div>
-                <div>
-                    <i data-lucide="award" class="w-8 h-8 text-teal-400 mx-auto mb-4"></i>
+                <div class="flex flex-col items-center">
+                    <i data-lucide="award" class="w-10 h-10 text-teal-400 mb-4"></i>
                     <p class="text-sm font-bold">Smart Bio Award</p>
-                    <p class="text-[8px] uppercase tracking-widest text-slate-400">Startup of the Year 2023</p>
+                    <p class="text-[9px] uppercase tracking-widest text-slate-400">Startup of the Year 2023</p>
                 </div>
-                <div>
-                    <i data-lucide="zap" class="w-8 h-8 text-teal-400 mx-auto mb-4"></i>
+                <div class="flex flex-col items-center">
+                    <i data-lucide="zap" class="w-10 h-10 text-teal-400 mb-4"></i>
                     <p class="text-sm font-bold">BIRAC Funded</p>
-                    <p class="text-[8px] uppercase tracking-widest text-slate-400">Govt. of India (DBT)</p>
+                    <p class="text-[9px] uppercase tracking-widest text-slate-400">Govt. of India (DBT)</p>
                 </div>
-                <div>
-                    <i data-lucide="trophy" class="w-8 h-8 text-teal-400 mx-auto mb-4"></i>
+                <div class="flex flex-col items-center">
+                    <i data-lucide="trophy" class="w-10 h-10 text-teal-400 mb-4"></i>
                     <p class="text-sm font-bold">Innopreneurs S9</p>
-                    <p class="text-[8px] uppercase tracking-widest text-slate-400">Special Achievement</p>
+                    <p class="text-[9px] uppercase tracking-widest text-slate-400">Special Achievement</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-white py-16 border-t border-slate-100">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+    <footer class="bg-white py-20 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
             <div>
-                <div class="flex items-center space-x-2 mb-6">
-                    <img src="images/logo.png" alt="Cosmos Bio" class="h-14 w-auto">
+                <div class="flex items-center space-x-2 mb-8">
+                    <img src="images/logo.png" alt="Cosmos Bio" class="h-16 w-auto">
                 </div>
-                <p class="text-slate-500 text-xs leading-relaxed max-w-sm">
-                    Incubated at <b>C-CAMP, Bangalore</b>. Engineering nature-identical APIs for a sustainable planet.
+                <p class="text-slate-500 text-sm md:text-base leading-relaxed max-w-md">
+                    Incubated at <b>C-CAMP, Bangalore</b>. Engineering nature-identical APIs through synthetic biology
+                    for a sustainable planet.
                 </p>
             </div>
-            <div class="flex flex-col md:items-end">
-                <h5 class="font-bold text-[#002244] mb-4 uppercase text-[10px] tracking-widest text-right">Connect</h5>
-                <div class="flex space-x-4 mb-8">
+            <div class="flex flex-col md:items-end justify-center">
+                <h5 class="font-bold text-[#002244] mb-6 uppercase text-[10px] tracking-widest text-right">Connect With
+                    Us</h5>
+                <div class="flex space-x-5 mb-10">
                     <a href="https://www.linkedin.com/company/cosmos-bio-private-limited/" target="_blank"
-                        class="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-slate-400 hover:text-[#0077b5] transition border border-slate-100 shadow-sm"><i
-                            data-lucide="linkedin"></i></a>
+                        class="w-12 h-12 bg-slate-50 rounded-full flex items-center justify-center text-slate-400 hover:text-[#0077b5] transition border border-slate-100 shadow-sm"><i
+                            data-lucide="linkedin" class="w-5 h-5"></i></a>
                     <a href="mailto:bharat@cosmosbiotech.com"
-                        class="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-slate-400 hover:text-teal-500 transition border border-slate-100 shadow-sm"><i
-                            data-lucide="mail"></i></a>
+                        class="w-12 h-12 bg-slate-50 rounded-full flex items-center justify-center text-slate-400 hover:text-teal-500 transition border border-slate-100 shadow-sm"><i
+                            data-lucide="mail" class="w-5 h-5"></i></a>
                 </div>
                 <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">© 2026 Cosmos Bio Pvt. Ltd.
+                    All rights reserved.
                 </p>
             </div>
         </div>
