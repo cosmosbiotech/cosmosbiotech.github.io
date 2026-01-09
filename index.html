@@ -70,16 +70,6 @@
             transform: translateY(0);
         }
 
-        .avatar-advisor {
-            width: 96px;
-            height: 96px;
-            border-radius: 50%;
-            background: #e2e8f0;
-            overflow: hidden;
-            border: 3px solid #14b8a6;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
         .spec-grid {
             border-top: 1px solid #f1f5f9;
             padding-top: 1.5rem;
@@ -153,6 +143,9 @@
             </div>
         </div>
     </section>
+
+    <!-- About Section Placeholder -->
+    <section id="about" class="py-1 bg-white"></section>
 
     <!-- Molecule Portfolio Section -->
     <section id="products" class="py-24 md:py-32 bg-slate-50">
@@ -310,44 +303,50 @@
             <h3 class="text-4xl md:text-5xl font-bold text-[#002244] font-outfit mb-16 tracking-tight">Precision in
                 Science & Business</h3>
 
-            <!-- Founders -->
-            <div class="grid md:grid-cols-2 gap-12 mb-16 max-w-4xl mx-auto">
-                <div class="reveal">
-                    <div class="w-56 h-64 mx-auto mb-8 team-blob shadow-xl">
-                        <img src="images/bharat.jpeg" alt="Bharat Somireddy" class="w-full h-full object-cover">
-                    </div>
+            <!-- Founders - Restored to original team-blob shape with LinkedIn link and Zoom effect -->
+            <div class="grid md:grid-cols-2 gap-12 mb-20 max-w-4xl mx-auto">
+                <div class="reveal group">
+                    <a href="https://www.linkedin.com/in/bharat-somireddy-venkata" target="_blank"
+                        class="block w-56 h-64 mx-auto mb-8 team-blob shadow-xl overflow-hidden">
+                        <img src="images/bharat.jpeg" alt="Bharat Somireddy"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    </a>
                     <div class="flex items-center justify-center space-x-2 mb-1">
-                        <h4 class="text-xl font-bold text-[#002244]">Bharat Somireddy, Ph.D.</h4>
+                        <h4 class="text-2xl font-bold text-[#002244]">Bharat Somireddy, Ph.D.</h4>
                         <a href="https://www.linkedin.com/in/bharat-somireddy-venkata" target="_blank"
                             class="text-[#0077b5] hover:opacity-80 transition"><i data-lucide="linkedin"
-                                class="w-4 h-4"></i></a>
+                                class="w-5 h-5"></i></a>
                     </div>
                     <p class="text-teal-600 text-xs font-bold uppercase tracking-[0.2em]">CEO & Founder</p>
                 </div>
-                <div class="reveal delay-100">
-                    <div class="w-56 h-64 mx-auto mb-8 team-blob shadow-xl">
-                        <img src="images/soujanya.png" alt="Sowjanya Venkata" class="w-full h-full object-cover">
-                    </div>
+                <div class="reveal group delay-100">
+                    <a href="https://www.linkedin.com/in/sowjanya-somireddy-656388155" target="_blank"
+                        class="block w-56 h-64 mx-auto mb-8 team-blob shadow-xl overflow-hidden">
+                        <img src="images/soujanya.png" alt="Sowjanya Venkata"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    </a>
                     <div class="flex items-center justify-center space-x-2 mb-1">
-                        <h4 class="text-xl font-bold text-[#002244]">Sowjanya Venkata</h4>
+                        <h4 class="text-2xl font-bold text-[#002244]">Sowjanya Venkata</h4>
                         <a href="https://www.linkedin.com/in/sowjanya-somireddy-656388155" target="_blank"
                             class="text-[#0077b5] hover:opacity-80 transition"><i data-lucide="linkedin"
-                                class="w-4 h-4"></i></a>
+                                class="w-5 h-5"></i></a>
                     </div>
                     <p class="text-teal-600 text-xs font-bold uppercase tracking-[0.2em]">Director & Cofounder</p>
                 </div>
             </div>
 
-            <!-- R&D Section -->
-            <h2 class="text-slate-400 font-bold uppercase tracking-widest text-[10px] mb-12">Research & Development Team
+            <!-- R&D Section - Linked Photos with Zoom -->
+            <h2 class="text-slate-400 font-bold uppercase tracking-widest text-[10px] mb-8">Research & Development Team
             </h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8 mb-12">
-                <div class="reveal flex flex-col items-center">
-                    <div
-                        class="w-28 md:w-32 aspect-[4/5] mb-4 rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-sm mx-auto">
-                        <img src="images/nilesh.png" alt="Nilesh Aghera" class="w-full h-full object-cover">
-                    </div>
-                    <div class="flex items-center justify-center space-x-1.5 mb-0.5">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8 mb-16">
+                <!-- Nilesh -->
+                <div class="reveal group flex flex-col items-center">
+                    <a href="https://www.linkedin.com/in/nilesh-aghera-phd-a060a214" target="_blank"
+                        class="w-32 h-32 aspect-square mb-4 rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-sm mx-auto">
+                        <img src="images/nilesh.png" alt="Nilesh Aghera"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    </a>
+                    <div class="flex items-center justify-center space-x-1.5 mb-1 text-center">
                         <p class="text-sm font-bold text-[#002244]">Nilesh Aghera, Ph.D.</p>
                         <a href="https://www.linkedin.com/in/nilesh-aghera-phd-a060a214" target="_blank"
                             class="text-[#0077b5] hover:opacity-80 transition"><i data-lucide="linkedin"
@@ -355,12 +354,14 @@
                     </div>
                     <p class="text-[10px] text-teal-600 font-bold uppercase tracking-widest">Team Lead</p>
                 </div>
-                <div class="reveal delay-75 flex flex-col items-center">
-                    <div
-                        class="w-28 md:w-32 aspect-[4/5] mb-4 rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-sm mx-auto">
-                        <img src="images/akanksha.png" alt="Akanksha Aphale" class="w-full h-full object-cover">
-                    </div>
-                    <div class="flex items-center justify-center space-x-1.5 mb-0.5">
+                <!-- Akanksha -->
+                <div class="reveal group delay-75 flex flex-col items-center">
+                    <a href="https://www.linkedin.com/in/akanksha-aphale-8452601b0" target="_blank"
+                        class="w-32 h-32 aspect-square mb-4 rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-sm mx-auto">
+                        <img src="images/akanksha.png" alt="Akanksha Aphale"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    </a>
+                    <div class="flex items-center justify-center space-x-1.5 mb-1 text-center">
                         <p class="text-sm font-bold text-[#002244]">Akanksha Aphale</p>
                         <a href="https://www.linkedin.com/in/akanksha-aphale-8452601b0" target="_blank"
                             class="text-[#0077b5] hover:opacity-80 transition"><i data-lucide="linkedin"
@@ -368,12 +369,14 @@
                     </div>
                     <p class="text-[10px] text-teal-600 font-bold uppercase tracking-widest">Junior Scientist</p>
                 </div>
-                <div class="reveal delay-150 flex flex-col items-center">
-                    <div
-                        class="w-28 md:w-32 aspect-[4/5] mb-4 rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-sm mx-auto">
-                        <img src="images/bhavana.png" alt="Bhawna Gupta" class="w-full h-full object-cover">
-                    </div>
-                    <div class="flex items-center justify-center space-x-1.5 mb-0.5">
+                <!-- Bhawna -->
+                <div class="reveal group delay-150 flex flex-col items-center">
+                    <a href="https://www.linkedin.com/in/bhawnagupta26/" target="_blank"
+                        class="w-32 h-32 aspect-square mb-4 rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-sm mx-auto">
+                        <img src="images/bhavana.png" alt="Bhawna Gupta"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    </a>
+                    <div class="flex items-center justify-center space-x-1.5 mb-1 text-center">
                         <p class="text-sm font-bold text-[#002244]">Bhawna Gupta</p>
                         <a href="https://www.linkedin.com/in/bhawnagupta26/" target="_blank"
                             class="text-[#0077b5] hover:opacity-80 transition"><i data-lucide="linkedin"
@@ -381,12 +384,14 @@
                     </div>
                     <p class="text-[10px] text-teal-600 font-bold uppercase tracking-widest">Molecular Biologist</p>
                 </div>
-                <div class="reveal delay-225 flex flex-col items-center">
-                    <div
-                        class="w-28 md:w-32 aspect-[4/5] mb-4 rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-sm mx-auto">
-                        <img src="images/tanisha.jpg" alt="Tanisha Jain" class="w-full h-full object-cover">
-                    </div>
-                    <div class="flex items-center justify-center space-x-1.5 mb-0.5">
+                <!-- Tanisha -->
+                <div class="reveal group delay-225 flex flex-col items-center">
+                    <a href="https://www.linkedin.com/in/tanisha-jain24" target="_blank"
+                        class="w-32 h-32 aspect-square mb-4 rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-sm mx-auto">
+                        <img src="images/tanisha.jpg" alt="Tanisha Jain"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    </a>
+                    <div class="flex items-center justify-center space-x-1.5 mb-1 text-center">
                         <p class="text-sm font-bold text-[#002244]">Tanisha Jain</p>
                         <a href="https://www.linkedin.com/in/tanisha-jain24" target="_blank"
                             class="text-[#0077b5] hover:opacity-80 transition"><i data-lucide="linkedin"
@@ -394,12 +399,14 @@
                     </div>
                     <p class="text-[10px] text-teal-600 font-bold uppercase tracking-widest">Research Associate</p>
                 </div>
-                <div class="reveal delay-300 flex flex-col items-center">
-                    <div
-                        class="w-28 md:w-32 aspect-[4/5] mb-4 rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-sm mx-auto">
-                        <img src="images/ajay.png" alt="Ajay Kumar" class="w-full h-full object-cover">
-                    </div>
-                    <div class="flex items-center justify-center space-x-1.5 mb-0.5">
+                <!-- Ajay -->
+                <div class="reveal group delay-300 flex flex-col items-center">
+                    <a href="https://www.linkedin.com/in/p11ajayks/" target="_blank"
+                        class="w-32 h-32 aspect-square mb-4 rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-sm mx-auto">
+                        <img src="images/ajay.png" alt="Ajay Kumar"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    </a>
+                    <div class="flex items-center justify-center space-x-1.5 mb-1 text-center">
                         <p class="text-sm font-bold text-[#002244]">Ajay Kumar K. S</p>
                         <a href="https://www.linkedin.com/in/p11ajayks/" target="_blank"
                             class="text-[#0077b5] hover:opacity-80 transition"><i data-lucide="linkedin"
@@ -410,32 +417,35 @@
             </div>
 
             <!-- Advisors Section -->
-            <div class="mt-12 pt-16 border-t border-slate-100">
+            <div class="mt-8 pt-16 border-t border-slate-100">
                 <h2 class="text-slate-400 font-bold uppercase tracking-widest text-[10px] mb-12">Scientific Advisors &
                     Mentors</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16 max-w-4xl mx-auto">
-                    <div class="text-center flex flex-col items-center reveal">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 max-w-4xl mx-auto">
+                    <div class="text-center flex flex-col items-center reveal group">
                         <div
-                            class="w-24 h-32 mb-4 rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-md">
-                            <img src="images/guhan.png" alt="Guhan Jayaraman" class="w-full h-full object-cover">
+                            class="w-32 h-32 aspect-square mb-6 rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-lg">
+                            <img src="images/guhan.png" alt="Prof. Guhan Jayaraman"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         </div>
-                        <p class="text-base font-bold text-[#002244]">Prof. Guhan Jayaraman</p>
+                        <p class="text-lg font-bold text-[#002244]">Prof. Guhan Jayaraman</p>
                         <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Project Advisor</p>
                     </div>
-                    <div class="text-center flex flex-col items-center reveal delay-100">
+                    <div class="text-center flex flex-col items-center reveal group delay-100">
                         <div
-                            class="w-24 h-32 mb-4 rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-md">
-                            <img src="images/gopal.jpeg" alt="Dr. Gopi" class="w-full h-full object-cover">
+                            class="w-32 h-32 aspect-square mb-6 rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-lg">
+                            <img src="images/gopal.jpeg" alt="Dr. Gopal R. Gopi"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         </div>
-                        <p class="text-base font-bold text-[#002244]">Dr. Gopal R. Gopi</p>
+                        <p class="text-lg font-bold text-[#002244]">Dr. Gopal R. Gopi</p>
                         <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Collaborator</p>
                     </div>
-                    <div class="text-center flex flex-col items-center reveal delay-200">
+                    <div class="text-center flex flex-col items-center reveal group delay-200">
                         <div
-                            class="w-24 h-32 mb-4 rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-md">
-                            <img src="images/venkatesh.png" alt="Prof. Venkatesh" class="w-full h-full object-cover">
+                            class="w-32 h-32 aspect-square mb-6 rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 shadow-lg">
+                            <img src="images/venkatesh.png" alt="Prof. Venkatesh KV"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         </div>
-                        <p class="text-base font-bold text-[#002244]">Prof. Venkatesh KV</p>
+                        <p class="text-lg font-bold text-[#002244]">Prof. Venkatesh KV</p>
                         <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Collaborator</p>
                     </div>
                 </div>
@@ -451,32 +461,32 @@
             <div class="grid grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8 text-center opacity-90 max-w-5xl mx-auto">
                 <div class="flex flex-col items-center">
                     <i data-lucide="award" class="w-10 h-10 text-teal-400 mb-4"></i>
-                    <p class="text-sm font-bold leading-tight">Govt. of Karnataka <br>ELEVATE Grant</p>
+                    <p class="text-sm font-bold leading-tight text-white">Govt. of Karnataka <br>ELEVATE Grant</p>
                     <p class="text-[9px] uppercase tracking-widest text-slate-400 mt-2">Innovation Funding</p>
                 </div>
                 <div class="flex flex-col items-center">
                     <i data-lucide="sparkles" class="w-10 h-10 text-teal-400 mb-4"></i>
-                    <p class="text-sm font-bold">Beauty&You</p>
+                    <p class="text-sm font-bold text-white">Beauty&You</p>
                     <p class="text-[9px] uppercase tracking-widest text-slate-400 mt-2">Finalist: Breakthrough</p>
                 </div>
                 <div class="flex flex-col items-center">
                     <i data-lucide="medal" class="w-10 h-10 text-teal-400 mb-4"></i>
-                    <p class="text-sm font-bold">NBEC Awardee</p>
+                    <p class="text-sm font-bold text-white">NBEC Awardee</p>
                     <p class="text-[9px] uppercase tracking-widest text-slate-400 mt-2">Bio Entrepreneurship</p>
                 </div>
                 <div class="flex flex-col items-center">
                     <i data-lucide="star" class="w-10 h-10 text-teal-400 mb-4"></i>
-                    <p class="text-sm font-bold">Smart Bio Award</p>
+                    <p class="text-sm font-bold text-white">Smart Bio Award</p>
                     <p class="text-[9px] uppercase tracking-widest text-slate-400 mt-2">Startup of the Year 2023</p>
                 </div>
                 <div class="flex flex-col items-center">
                     <i data-lucide="zap" class="w-10 h-10 text-teal-400 mb-4"></i>
-                    <p class="text-sm font-bold">BIRAC Funded</p>
+                    <p class="text-sm font-bold text-white">BIRAC Funded</p>
                     <p class="text-[9px] uppercase tracking-widest text-slate-400 mt-2">Govt. of India (DBT)</p>
                 </div>
                 <div class="flex flex-col items-center">
                     <i data-lucide="trophy" class="w-10 h-10 text-teal-400 mb-4"></i>
-                    <p class="text-sm font-bold">Innopreneurs S9</p>
+                    <p class="text-sm font-bold text-white">Innopreneurs S9</p>
                     <p class="text-[9px] uppercase tracking-widest text-slate-400 mt-2">Special Achievement</p>
                 </div>
             </div>
