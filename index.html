@@ -341,10 +341,6 @@
                                         <p class="text-[10px] text-slate-400 uppercase font-bold mb-2">Application</p>
                                         <p id="eco-use" class="text-sm font-semibold text-[#002244]">Serums, Creams, Lotions</p>
                                     </div>
-                                    <div class="col-span-2">
-                                        <p class="text-[10px] text-slate-400 uppercase font-bold mb-2">Strategic Value</p>
-                                        <p id="eco-why" class="text-sm text-slate-600 italic">Highly competitive pricing for volume manufacturing with non-GMO, fermentation-derived positioning.</p>
-                                    </div>
                                 </div>
                                 <div id="eco-actions" class="mt-6"></div>
                             </div>
@@ -702,7 +698,6 @@
                 desc: "EctoBase is designed to simplify the development of skincare products focused on hydration, barrier repair, and environmental stress protection. Meets all global cosmetic regulatory standards.",
                 format: "Powder",
                 use: "Serums, Creams, Lotions",
-                why: "Highly competitive pricing for volume manufacturing with non-GMO, fermentation-derived positioning.",
                 simClass: "sim-cosmetic",
                 simText: "Standard Cosmetic Powder",
                 image: "images/ectobase.webp?v=1",
@@ -715,7 +710,6 @@
                 desc: "Designed for premium cosmetics and dermatological applications. Tighter heavy metals specs, low endotoxin levels, and dedicated stability data.",
                 format: "High Purity Powder",
                 use: "Dermatologist brands, Clinical skincare",
-                why: "Commands a premium for brands requiring rigorous technical data and higher purity thresholds.",
                 simClass: "sim-clinical",
                 simText: "Pure Clinical Bio-Crystal",
                 image: "images/ectopure.webp?v=1",
@@ -728,7 +722,6 @@
                 desc: "Highest purity tier. Meets strict requirements for pharmaceutical applications, including DMF filing compatibility and microbial validation for medical devices.",
                 format: "Sterile API / Excipient",
                 use: "Nasal sprays, Ophthalmic, Inhalation",
-                why: "DMF ready and GMP manufactured. Represents a massive value jump and entry into high-barrier pharma markets.",
                 simClass: "sim-pharma",
                 simText: "Sterile Pharmaceutical Grade",
                 image: "images/ectopharm.webp?v=1",
@@ -752,7 +745,6 @@
             document.getElementById('eco-desc').innerHTML = data.desc;
             document.getElementById('eco-format').innerHTML = data.format;
             document.getElementById('eco-use').innerHTML = data.use;
-            document.getElementById('eco-why').innerHTML = data.why;
 
             const visualizer = document.getElementById('eco-visualizer');
             visualizer.className = 'h-48 w-full sim-visualizer relative';
